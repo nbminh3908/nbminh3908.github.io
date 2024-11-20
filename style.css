@@ -1,69 +1,69 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Lucida Console', monospace;
     margin: 0;
     padding: 0;
-    background-color: #222;
-    color: #ddd;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header, main, footer {
-    padding: 2rem;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ccc;
 }
 
-h1, h2 {
+header h1 {
     margin: 0;
-    padding: 0.5rem;
-    color: #fff;
-}
-
-p {
-    line-height: 1.5;
-}
-
-a {
-    color: #888;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #fff;
-}
-
-.social-media ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.social-media li {
-    margin-bottom: 1rem;
-}
-
-footer {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #444;
+    font-size: 1.5rem;
 }
 
 #theme-toggle {
-    background-color: #444;
-    color: #ddd;
-    padding: 0.5rem 1rem;
+    background: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    padding: 0;
 }
 
-.light-theme {
-    background-color: #eee;
-    color: #222;
+#theme-toggle img {
+    width: 32px;
+    height: 32px;
 }
 
-.light-theme h1,
-.light-theme h2 {
-    color: #000;
+main {
+    padding: 2rem;
+    text-align: center;
 }
 
-.light-theme a {
-    color: #000;
+main ul {
+    list-style: none;
+    padding: 0;
+}
+
+main ul li {
+    margin: 0.5rem 0;
+}
+
+main ul li a {
+    text-decoration: none;
+    color: #0073e6;
+    transition: color 0.3s;
+}
+
+main ul li a:hover {
+    color: #005bb5;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #444;
 }
