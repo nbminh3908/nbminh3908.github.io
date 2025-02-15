@@ -6,7 +6,7 @@ body {
     background-color: #fff;
     background-image: url('https://raw.githubusercontent.com/nbminh3908/nbminh3908.github.io/refs/heads/main/assets/ibuprofen.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 50% 20%;
     background-repeat: no-repeat;
     transition: background-color 0.3s, color 0.3s;
     position: relative;
