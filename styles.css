@@ -4,7 +4,23 @@ body {
     padding: 0;
     color: #333;
     background-color: #fff;
+    background-image: url('https://raw.githubusercontent.com/nbminh3908/nbminh3908.github.io/refs/heads/main/assets/ibuprofen.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 header {
@@ -57,7 +73,6 @@ main ul li a:hover {
     color: #005bb5;
 }
 
-/* Dark mode styles */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -66,4 +81,8 @@ body.dark-mode {
 body.dark-mode header {
     background-color: #1e1e1e;
     border-bottom: 2px solid #444;
+}
+
+body.dark-mode::before {
+    background: rgba(0, 0, 0, 0.7);
 }
