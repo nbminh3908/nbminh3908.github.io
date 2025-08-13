@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
       margin: 0;
@@ -12,12 +13,24 @@
     }
     iframe {
       border: none;
-      width: 100%;
-      height: 100%;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://nguyenngockhanh.vn"></iframe>
+  <iframe id="mirror" src="https://nguyenngockhanh.vn"></iframe>
+
+  <script>
+    function resizeIframe() {
+      const iframe = document.getElementById("mirror");
+      iframe.style.width = window.innerWidth + "px";
+      iframe.style.height = window.innerHeight + "px";
+    }
+
+    window.addEventListener("resize", resizeIframe);
+    window.addEventListener("orientationchange", resizeIframe);
+
+    resizeIframe();
+  </script>
 </body>
 </html>
