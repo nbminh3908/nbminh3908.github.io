@@ -1088,6 +1088,7 @@ h1 {
   .valorant-peak {
     grid-column: 1 / -1;
     grid-template-columns: auto 1fr auto;
+    gap: 14px;
     min-height: auto;
     justify-items: start;
     text-align: left;
@@ -1096,6 +1097,15 @@ h1 {
   .valorant-peak img {
     width: 48px;
     height: 48px;
+    order: 1;
+  }
+
+  .valorant-peak strong {
+    order: 2;
+  }
+
+  .valorant-peak figcaption {
+    order: 3;
   }
 
   .valorant-current {
@@ -1190,11 +1200,18 @@ h1 {
   }
 
   .footer {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 6px;
     padding-top: 36px;
     padding-bottom: 8px;
     text-align: center;
     font-size: 0.82rem;
+  }
+
+  .api-credit {
+    text-align: center;
   }
 }
 
