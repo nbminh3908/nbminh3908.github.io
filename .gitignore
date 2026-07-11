@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+*.log
+.vite
+public/lastfm-now-playing
+.env
+.env.local
+.env.*.local
