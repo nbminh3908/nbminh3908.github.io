@@ -74,7 +74,7 @@ export default function MatchRow({ match, index }) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between gap-6 sm:justify-end">
+        <div className="flex items-end justify-between gap-6 sm:justify-end">
           <div className="flex items-center gap-5 font-mono text-sm text-ink-muted">
             <span className="flex items-center gap-1.5" title="Kills / Deaths / Assists">
               <Target size={14} className="text-ink-faint" />
