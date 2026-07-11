@@ -1,4 +1,4 @@
-import { Gamepad2, Target, BarChart3, Swords, Crown, Star } from "lucide-react";
+import { Gamepad2, Target, BarChart3, Flag, Crown, Star } from "lucide-react";
 
 export default function MatchRow({ match, index }) {
   const {
@@ -85,7 +85,7 @@ export default function MatchRow({ match, index }) {
               {acs}
             </span>
             <span className="flex items-center gap-1.5" title="Round score">
-              <Swords size={14} className="text-ink-faint" />
+              <Flag size={14} className="text-ink-faint" />
               {ownScore}-{enemyScore}
             </span>
           </div>

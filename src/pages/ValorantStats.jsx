@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Swords, TrendingUp, Trophy, Loader2, AlertTriangle } from "lucide-react";
+import { Swords, TrendingUp, Trophy, Loader2, AlertTriangle, User } from "lucide-react";
 import Layout from "../components/layout/Layout.jsx";
 import { Eyebrow } from "../components/ui/SectionHeader.jsx";
 import { Reveal } from "../components/animations/Reveal.jsx";
@@ -41,7 +41,7 @@ export default function ValorantStats() {
           ) : null}
 
           <div className="relative z-10 p-6 sm:p-8">
-            <Eyebrow icon={Swords}>Profile</Eyebrow>
+            <Eyebrow icon={User}>Profile</Eyebrow>
 
             <div className="mt-5 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
