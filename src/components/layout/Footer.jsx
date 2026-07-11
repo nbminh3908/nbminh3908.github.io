@@ -3,14 +3,14 @@ export default function Footer({ apiCredit = false }) {
     <footer className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-4 py-10 text-center text-xs text-ink-faint sm:px-6">
       {apiCredit ? (
         <span>
-          APIs used:{" "}
+          Powered by{" "}
           <a
             href="https://docs.henrikdev.xyz/"
             target="_blank"
             rel="noreferrer"
             className="text-ink-muted underline decoration-dotted underline-offset-2 hover:text-accent"
           >
-            HenrikDev
+            HenrikDev API
           </a>{" "}
           and{" "}
           <a
