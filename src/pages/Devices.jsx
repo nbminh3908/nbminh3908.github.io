@@ -12,7 +12,7 @@ const devices = [
       "AMD Ryzen\u2122 7 2700",
       "16GB DDR4 2666MHz",
       "NVIDIA GeForce GTX 1070",
-      "256GB SATA SSD",
+      "240GB SATA SSD",
       "1TB + 750GB + 500GB HDD",
       "Windows 11 Pro 25H2",
     ],
