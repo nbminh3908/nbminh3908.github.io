@@ -29,7 +29,6 @@ export default function Home() {
 
           <Reveal delay={0.15} className="mt-6 max-w-lg space-y-4 text-base leading-relaxed text-ink-muted sm:text-lg">
             <p>My name is Ngo Bao Minh, but I usually go by Bao on social media.</p>
-            <p>My hobbies revolve around tech tinkering, casual gaming, and socializing with my irl friends :D.</p>
           </Reveal>
 
           <Reveal delay={0.24} className="mt-8">
@@ -73,9 +72,50 @@ export default function Home() {
 
         <Reveal delay={0.1} className="mt-5">
           <SpotlightCard className="p-6 sm:p-8">
-            <p className="text-base leading-relaxed text-ink sm:text-lg">
-              I'm a graduated 17-year-old HS student (turning 18 this year!), and I live in Hanoi, Vietnam.
-            </p>
+            <div className="space-y-3 text-base leading-relaxed text-ink sm:text-lg">
+              <p>I was born on September 3, 2008 and I live in Hanoi, Vietnam.</p>
+              <p>
+                My hobbies revolve around tech tinkering, casual (or competitive) gaming, and socializing irl (I'm
+                an extrovert once you know me well :D).
+              </p>
+              <p>
+                I mainly play{" "}
+                <Link to="/valorant-stats" className="font-medium text-accent underline underline-offset-2 hover:text-accent/80">
+                  VALORANT
+                </Link>{" "}
+                in my free time, you can also find my Tracker.gg stats{" "}
+                <a
+                  href="https://tracker.gg/valorant/profile/riot/Nanashi%20Mumei%23baooo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-accent underline underline-offset-2 hover:text-accent/80"
+                >
+                  here
+                </a>
+                .
+              </p>
+              <p>
+                I also play a bit of{" "}
+                <a
+                  href="https://namemc.com/profile/Baooo_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-accent underline underline-offset-2 hover:text-accent/80"
+                >
+                  Minecraft
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://roblox.com/users/722175181/profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-accent underline underline-offset-2 hover:text-accent/80"
+                >
+                  Roblox
+                </a>{" "}
+                too.
+              </p>
+            </div>
             <p className="mt-3 text-sm text-ink-faint">that's all... for now (updates soon, i promise :D)</p>
           </SpotlightCard>
         </Reveal>
