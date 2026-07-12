@@ -4,14 +4,14 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.topbar.nav-open .menu-toggle path:nth-child(1) {
+.menu-toggle.is-open path:nth-child(1) {
   transform: translateY(5px) rotate(45deg);
 }
 
-.topbar.nav-open .menu-toggle path:nth-child(2) {
+.menu-toggle.is-open path:nth-child(2) {
   opacity: 0;
 }
 
-.topbar.nav-open .menu-toggle path:nth-child(3) {
+.menu-toggle.is-open path:nth-child(3) {
   transform: translateY(-5px) rotate(-45deg);
 }
