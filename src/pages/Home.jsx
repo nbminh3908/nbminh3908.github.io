@@ -116,7 +116,6 @@ export default function Home() {
                 too.
               </p>
             </div>
-            <p className="mt-3 text-sm text-ink-faint">that's all... for now (updates soon, i promise :D)</p>
           </SpotlightCard>
         </Reveal>
       </section>
