@@ -28,7 +28,7 @@ export default function Home() {
           </motion.h1>
 
           <Reveal delay={0.15} className="mt-6 max-w-lg space-y-4 text-base leading-relaxed text-ink-muted sm:text-lg">
-            <p>My name is Ngo Bao Minh, but I usually go by Bao on social media.</p>
+            <p>My name is Ngo Bao Minh, but I usually go by Bao (my middle name) on social media. Nice to meet you!</p>
           </Reveal>
 
           <Reveal delay={0.24} className="mt-8">
