@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, TrendingUp, Trophy, Loader2, AlertTriangle, } from "lucide-react";
+import { User, TrendingUp, Trophy, Loader2, AlertTriangle } from "lucide-react";
 import Layout from "../components/layout/Layout.jsx";
 import { Eyebrow } from "../components/ui/SectionHeader.jsx";
 import { Reveal } from "../components/animations/Reveal.jsx";
