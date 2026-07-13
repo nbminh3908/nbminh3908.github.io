@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Swords, TrendingUp, Trophy, Loader2, AlertTriangle, User } from "lucide-react";
+import { User, TrendingUp, Trophy, Loader2, AlertTriangle, } from "lucide-react";
 import Layout from "../components/layout/Layout.jsx";
 import { Eyebrow } from "../components/ui/SectionHeader.jsx";
 import { Reveal } from "../components/animations/Reveal.jsx";
@@ -53,7 +53,7 @@ export default function ValorantStats() {
                   />
                 ) : (
                   <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent-soft text-accent">
-                    <Swords size={22} />
+                    <User size={22} />
                   </span>
                 )}
                 <div>
