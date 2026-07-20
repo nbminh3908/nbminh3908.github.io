@@ -13,7 +13,7 @@ const devices = [
       "16GB DDR4 2666MHz",
       "NVIDIA GeForce GTX 1070",
       "240GB SATA SSD",
-      "1TB + 750GB + 500GB HDD",
+      "1TB + 750GB HDD",
       "Windows 11 Pro 25H2",
     ],
   },
@@ -23,10 +23,10 @@ const devices = [
     specs: [
       "BIOSTAR H55 HD",
       "Intel\u00ae Xeon\u00ae X3440",
-      "3GB DDR3 1600MHz",
-      "No GPU (yet) :(",
-      "160GB HDD",
-      "Arch Linux",
+      "3GB DDR3 1333MHz",
+      "AMD Radeon HD 6350",
+      "500GB HDD",
+      "Ubuntu Server 26.04 LTS",
     ],
   },
   {
