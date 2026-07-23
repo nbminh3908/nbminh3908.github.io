@@ -23,7 +23,7 @@ const devices = [
     specs: [
       "BIOSTAR H55 HD",
       "Intel\u00ae Xeon\u00ae X3440",
-      "3GB DDR3 1333MHz",
+      "6GB DDR3 1333MHz",
       "AMD Radeon HD 6350",
       "500GB HDD",
       "Ubuntu Server 26.04 LTS",
