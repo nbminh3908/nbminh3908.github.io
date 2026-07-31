@@ -30,10 +30,14 @@ export function mapHeartbeatStatus(status) {
 
 function overallFromServices(services) {
   if (!services.length) return { label: "Unavailable", tone: "unknown" };
-  if (services.some((service) => service.tone === "down")) return { label: "Offline", tone: "down" };
-  if (services.some((service) => service.tone === "pending" || service.tone === "unknown")) {
-    return { label: "Degraded", tone: "pending" };
-  }
+
+  const downCount = services.filter((service) => service.tone === "down").length;
+  const hasIssues = services.some(
+    (service) => service.tone === "down" || service.tone === "pending" || service.tone === "unknown"
+  );
+
+  if (downCount === services.length) return { label: "Offline", tone: "down" };
+  if (hasIssues) return { label: "Partially Degraded", tone: "degraded" };
   return { label: "Operational", tone: "up" };
 }
 
@@ -99,7 +103,7 @@ export async function loadServerStatus(signal) {
         uptimePercent: typeof uptimeRatio === "number" ? Math.round(uptimeRatio * 1000) / 10 : null,
         latestPing: latest && typeof latest.ping === "number" ? latest.ping : null,
         lastUpdate: latest ? formatHeartbeatTime(latest.time) : null,
-        history: history.slice(-20).map((beat) => mapHeartbeatStatus(beat?.status).tone),
+        history: history.slice(-30).map((beat) => mapHeartbeatStatus(beat?.status).tone),
       };
     });
 

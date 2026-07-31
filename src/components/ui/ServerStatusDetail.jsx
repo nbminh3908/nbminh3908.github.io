@@ -10,6 +10,7 @@ const toneBadgeClass = {
   up: "bg-win/15 text-win",
   down: "bg-loss/15 text-loss",
   pending: "bg-accent-cyan/15 text-accent-cyan",
+  degraded: "bg-orange-400/15 text-orange-400",
   unknown: "bg-base-border/60 text-ink-faint",
 };
 
@@ -17,6 +18,7 @@ const toneDotClass = {
   up: "bg-win",
   down: "bg-loss",
   pending: "bg-accent-cyan",
+  degraded: "bg-orange-400",
   unknown: "bg-ink-faint",
 };
 
@@ -99,7 +101,7 @@ export default function ServerStatusDetail({ open, onClose }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ duration: 0.3, ease: easing }}
-            className="relative z-10 w-full max-w-md overflow-hidden rounded-2xl border border-base-border glass-panel shadow-glass"
+            className="relative z-10 w-full max-w-lg overflow-hidden rounded-2xl border border-base-border glass-panel shadow-glass"
           >
             <div className="flex items-center justify-between gap-3 border-b border-base-border p-5">
               <div className="flex items-center gap-2.5">
@@ -136,7 +138,7 @@ export default function ServerStatusDetail({ open, onClose }) {
               </button>
             </div>
 
-            <div className="max-h-[60vh] overflow-y-auto p-5">
+            <div className="max-h-[70vh] overflow-y-auto p-5">
               {loading ? (
                 <div className="flex items-center gap-2 py-6 text-sm text-ink-muted" role="status">
                   <Loader2 size={15} className="animate-spin" />
@@ -185,27 +187,36 @@ export default function ServerStatusDetail({ open, onClose }) {
                         </span>
                       </div>
 
-                      {service.history.length ? (
-                        <div className="mt-3 flex h-9 items-stretch gap-[3px]" aria-hidden="true">
-                          {service.history.map((tone, index) => (
-                            <span key={index} className={`flex-1 rounded-sm ${toneDotClass[tone]}`} />
-                          ))}
-                        </div>
-                      ) : null}
+                      <div className="mt-3 flex h-9 items-stretch gap-[3px]" aria-hidden="true">
+                        {Array.from({ length: 30 }, (_, index) => {
+                          const padCount = 30 - service.history.length;
+                          const tone = index < padCount ? "unknown" : service.history[index - padCount];
+                          return <span key={index} className={`flex-1 rounded-sm ${toneDotClass[tone]}`} />;
+                        })}
+                      </div>
                     </li>
                   ))}
                 </ul>
               )}
             </div>
 
-            <div className="flex items-center justify-end border-t border-base-border p-5">
+            <div className="flex items-center justify-between gap-3 border-t border-base-border p-5">
+              <a
+                href="https://github.com/louislam/uptime-kuma"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-ink-faint transition-colors hover:text-ink-muted"
+              >
+                Powered by Uptime Kuma
+              </a>
+
               <a
                 href={uptimeKumaStatusPageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-base-border px-3.5 py-2 text-xs font-medium text-ink-muted transition-colors hover:text-ink"
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-base-border px-3.5 py-2 text-xs font-medium text-ink-muted transition-colors hover:text-ink"
               >
-                View Full Status Page
+                View Full Page
                 <ExternalLink size={12} />
               </a>
             </div>

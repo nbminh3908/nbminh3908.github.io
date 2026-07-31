@@ -68,8 +68,8 @@ export default function Devices() {
         {devices.map((device) => (
           <StaggerItem key={device.name}>
             <SpotlightCard
-              className={`h-full p-6 ${
-                device.interactive ? "cursor-pointer transition-transform hover:-translate-y-1" : ""
+              className={`h-full p-6 transition-transform hover:-translate-y-1 ${
+                device.interactive ? "cursor-pointer" : ""
               }`}
               {...(device.interactive
                 ? {
@@ -89,11 +89,10 @@ export default function Devices() {
                 </span>
                 <h2 className="font-display text-lg font-semibold text-ink">{device.name}</h2>
                 {device.interactive ? (
-                  <ArrowUpRight
-                    size={16}
-                    aria-hidden="true"
-                    className="ml-auto text-ink-faint opacity-0 transition-opacity group-hover:opacity-100"
-                  />
+                  <span className="ml-auto inline-flex shrink-0 items-center gap-1 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-medium text-accent">
+                    Live status
+                    <ArrowUpRight size={12} aria-hidden="true" />
+                  </span>
                 ) : null}
               </div>
               <ul className="mt-5 space-y-2.5 font-mono text-sm text-ink-muted">
