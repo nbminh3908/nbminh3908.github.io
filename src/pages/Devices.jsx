@@ -1,7 +1,9 @@
-import { Monitor, Server, Smartphone } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Monitor, Server, Smartphone } from "lucide-react";
 import Layout from "../components/layout/Layout.jsx";
 import { Reveal, StaggerGroup, StaggerItem } from "../components/animations/Reveal.jsx";
 import SpotlightCard from "../components/ui/SpotlightCard.jsx";
+import ServerStatusDetail from "../components/ui/ServerStatusDetail.jsx";
 
 const devices = [
   {
@@ -20,6 +22,8 @@ const devices = [
   {
     name: "Server",
     icon: Server,
+    // Opens the live uptime detail view — see ServerStatusDetail.
+    interactive: true,
     specs: [
       "BIOSTAR H55 HD",
       "Intel\u00ae Xeon\u00ae X3440",
@@ -37,6 +41,19 @@ const devices = [
 ];
 
 export default function Devices() {
+  const [serverDetailOpen, setServerDetailOpen] = useState(false);
+
+  function openServerDetail() {
+    setServerDetailOpen(true);
+  }
+
+  function handleServerKeyDown(event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openServerDetail();
+    }
+  }
+
   return (
     <Layout>
       <section aria-labelledby="devices-title">
@@ -50,12 +67,34 @@ export default function Devices() {
       <StaggerGroup className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-label="Device list">
         {devices.map((device) => (
           <StaggerItem key={device.name}>
-            <SpotlightCard className="h-full p-6">
+            <SpotlightCard
+              className={`h-full p-6 ${
+                device.interactive ? "cursor-pointer transition-transform hover:-translate-y-1" : ""
+              }`}
+              {...(device.interactive
+                ? {
+                    role: "button",
+                    tabIndex: 0,
+                    "aria-haspopup": "dialog",
+                    "aria-expanded": serverDetailOpen,
+                    "aria-label": "View live server uptime status",
+                    onClick: openServerDetail,
+                    onKeyDown: handleServerKeyDown,
+                  }
+                : {})}
+            >
               <div className="flex items-center gap-2.5">
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-soft text-accent">
                   <device.icon size={17} strokeWidth={2.25} />
                 </span>
                 <h2 className="font-display text-lg font-semibold text-ink">{device.name}</h2>
+                {device.interactive ? (
+                  <ArrowUpRight
+                    size={16}
+                    aria-hidden="true"
+                    className="ml-auto text-ink-faint opacity-0 transition-opacity group-hover:opacity-100"
+                  />
+                ) : null}
               </div>
               <ul className="mt-5 space-y-2.5 font-mono text-sm text-ink-muted">
                 {device.specs.map((spec) => (
@@ -69,6 +108,8 @@ export default function Devices() {
           </StaggerItem>
         ))}
       </StaggerGroup>
+
+      <ServerStatusDetail open={serverDetailOpen} onClose={() => setServerDetailOpen(false)} />
     </Layout>
   );
 }
