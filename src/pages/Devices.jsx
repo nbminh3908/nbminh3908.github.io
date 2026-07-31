@@ -90,7 +90,7 @@ export default function Devices() {
                 <h2 className="font-display text-lg font-semibold text-ink">{device.name}</h2>
                 {device.interactive ? (
                   <span className="ml-auto inline-flex shrink-0 items-center gap-1 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-medium text-accent">
-                    Live status
+                    Uptime
                     <ArrowUpRight size={12} aria-hidden="true" />
                   </span>
                 ) : null}
