@@ -32,7 +32,7 @@ const devices = [
   {
     name: "iPhone 11",
     icon: Smartphone,
-    specs: ["Apple A13 Bionic", "64GB NVMe", "4GB RAM", "iOS 27 Developer Beta 2"],
+    specs: ["Apple A13 Bionic", "64GB NVMe", "4GB LPDDR4X", "iOS 27 Developer Beta 2"],
   },
 ];
 
