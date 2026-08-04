@@ -16,7 +16,7 @@ const devices = [
       "NVIDIA GeForce GTX 1070",
       "240GB SATA SSD",
       "1TB + 750GB HDD",
-      "Windows 11 Pro 25H2",
+      "Windows 10 IoT Enterprise LTSC 2021",
     ],
   },
   {
@@ -30,13 +30,18 @@ const devices = [
       "6GB DDR3 1333MHz",
       "AMD Radeon HD 6350",
       "500GB HDD",
-      "Ubuntu Server 26.04 LTS",
+      "Ubuntu 26.04 LTS",
     ],
   },
   {
     name: "iPhone 11",
     icon: Smartphone,
-    specs: ["Apple A13 Bionic", "64GB NVMe", "4GB LPDDR4X", "iOS 27 Developer Beta 4"],
+    specs: [
+      "Apple A13 Bionic",
+      "64GB NVMe",
+      "4GB LPDDR4X",
+      "iOS 27 Developer Beta 4",
+    ],
   },
 ];
 
