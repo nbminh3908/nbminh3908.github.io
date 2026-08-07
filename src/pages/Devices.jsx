@@ -16,7 +16,7 @@ const devices = [
       "NVIDIA GeForce GTX 1070",
       "240GB SATA SSD",
       "1TB + 750GB HDD",
-      "Windows 10 IoT Enterprise LTSC 2021",
+      "Windows 10 IoT LTSC 2021",
     ],
   },
   {
@@ -38,8 +38,8 @@ const devices = [
     icon: Smartphone,
     specs: [
       "Apple A13 Bionic",
-      "64GB NVMe",
       "4GB LPDDR4X",
+      "64GB NVMe",
       "iOS 27 Developer Beta 4",
     ],
   },
