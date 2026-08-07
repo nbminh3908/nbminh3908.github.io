@@ -11,13 +11,13 @@ const devices = [
     icon: Monitor,
     specs: [
       "ASUS PRIME A320M-K",
-      "AMD Ryzen\u2122 7 2700",
+      "AMD Ryzen™ 7 2700",
       "16GB DDR4 2666MHz",
       "NVIDIA GeForce GTX 1070",
       "240GB SATA SSD",
       "1TB + 750GB HDD",
-      "Windows 10 IoT LTSC 2021",
     ],
+    os: ["Windows 10 IoT LTSC 2021", "Linux Mint 22.3 LTS"],
   },
   {
     name: "Server",
@@ -26,7 +26,7 @@ const devices = [
     interactive: true,
     specs: [
       "BIOSTAR H55 HD",
-      "Intel\u00ae Xeon\u00ae X3440",
+      "Intel® Xeon® X3440",
       "6GB DDR3 1333MHz",
       "AMD Radeon HD 6350",
       "500GB HDD",
@@ -63,13 +63,19 @@ export default function Devices() {
     <Layout>
       <section aria-labelledby="devices-title">
         <Reveal>
-          <h1 id="devices-title" className="font-display text-3xl font-semibold text-ink sm:text-4xl">
+          <h1
+            id="devices-title"
+            className="font-display text-3xl font-semibold text-ink sm:text-4xl"
+          >
             Devices
           </h1>
         </Reveal>
       </section>
 
-      <StaggerGroup className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-label="Device list">
+      <StaggerGroup
+        className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        aria-label="Device list"
+      >
         {devices.map((device) => (
           <StaggerItem key={device.name}>
             <SpotlightCard
@@ -92,7 +98,11 @@ export default function Devices() {
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-soft text-accent">
                   <device.icon size={17} strokeWidth={2.25} />
                 </span>
-                <h2 className="font-display text-lg font-semibold text-ink">{device.name}</h2>
+
+                <h2 className="font-display text-lg font-semibold text-ink">
+                  {device.name}
+                </h2>
+
                 {device.interactive ? (
                   <span className="ml-auto inline-flex shrink-0 items-center gap-1 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-medium text-accent">
                     Uptime
@@ -100,6 +110,7 @@ export default function Devices() {
                   </span>
                 ) : null}
               </div>
+
               <ul className="mt-5 space-y-2.5 font-mono text-sm text-ink-muted">
                 {device.specs.map((spec) => (
                   <li key={spec} className="flex items-start gap-2">
@@ -107,13 +118,28 @@ export default function Devices() {
                     <span>{spec}</span>
                   </li>
                 ))}
+
+                {device.os ? (
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-faint" />
+
+                    <div className="space-y-2.5">
+                      {device.os.map((os) => (
+                        <div key={os}>{os}</div>
+                      ))}
+                    </div>
+                  </li>
+                ) : null}
               </ul>
             </SpotlightCard>
           </StaggerItem>
         ))}
       </StaggerGroup>
 
-      <ServerStatusDetail open={serverDetailOpen} onClose={() => setServerDetailOpen(false)} />
+      <ServerStatusDetail
+        open={serverDetailOpen}
+        onClose={() => setServerDetailOpen(false)}
+      />
     </Layout>
   );
 }
