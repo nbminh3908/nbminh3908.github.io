@@ -17,12 +17,14 @@ const devices = [
       "240GB SATA SSD",
       "1TB + 750GB HDD",
     ],
-    os: ["Windows 10 IoT LTSC 2021", "Linux Mint 22.3 LTS"],
+    os: [
+      "Windows 10 IoT LTSC 2021",
+      "Linux Mint 22.3 LTS",
+    ],
   },
   {
     name: "Server",
     icon: Server,
-    // Opens the live uptime detail view — see ServerStatusDetail.
     interactive: true,
     specs: [
       "BIOSTAR H55 HD",
@@ -30,6 +32,8 @@ const devices = [
       "6GB DDR3 1333MHz",
       "AMD Radeon HD 6350",
       "500GB HDD",
+    ],
+    os: [
       "Ubuntu 26.04 LTS",
     ],
   },
@@ -40,6 +44,8 @@ const devices = [
       "Apple A13 Bionic",
       "4GB LPDDR4X",
       "64GB NVMe",
+    ],
+    os: [
       "iOS 27 Developer Beta 4",
     ],
   },
@@ -119,17 +125,15 @@ export default function Devices() {
                   </li>
                 ))}
 
-                {device.os ? (
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-faint" />
+                <li className="flex items-start gap-2">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-faint" />
 
-                    <div className="space-y-2.5">
-                      {device.os.map((os) => (
-                        <div key={os}>{os}</div>
-                      ))}
-                    </div>
-                  </li>
-                ) : null}
+                  <div className="space-y-2.5">
+                    {device.os.map((os) => (
+                      <div key={os}>{os}</div>
+                    ))}
+                  </div>
+                </li>
               </ul>
             </SpotlightCard>
           </StaggerItem>
