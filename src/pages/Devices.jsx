@@ -19,7 +19,7 @@ const devices = [
     ],
     os: [
       "Windows 10 IoT LTSC 2021",
-      "Linux Mint 22.3 LTS",
+      "Fedora Linux 44",
     ],
   },
   {
